@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MicroService</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 350px;
+      height: 450px;
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .container.flipped .card {
+      transform: rotateY(180deg);
+    }
+
+    .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      backface-visibility: hidden;
+    }
+
+    .side h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .side input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .side button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .side .switch {
+      margin-top: 15px;
+      text-align: center;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="flip-container">
+  <div class="card">
+    <!-- Sign In -->
+    <div class="side front">
+      <h2>Sign In</h2>
+      <form method="POST" action="/signin">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div class="switch" onclick="flipCard()">Don't have an account? Sign Up</div>
+    </div>
+
+    <!-- Sign Up -->
+    <div class="side back">
+      <h2>Sign Up</h2>
+      <form method="POST" action="/signup">
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+      <div class="switch" onclick="flipCard()">Already have an account? Sign In</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function flipCard() {
+    document.getElementById("flip-container").classList.toggle("flipped");
+  }
+</script>
+
+</body>
+</html>

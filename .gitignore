@@ -1,0 +1,26 @@
+# Binaries
+/myproject
+*.exe
+*.out
+*.test
+
+# Dependency directories
+/vendor/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+
+# Logs
+*.log
+
+# Coverage reports
+coverage.out
