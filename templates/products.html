@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Products</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      width: 400px;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-option {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Select Products</h2>
+    <form method="POST" action="/purchase">
+      {{range .}}
+        <label class="product-option">
+          <input type="checkbox" name="products" value="{{.}}" required> {{.}}
+        </label>
+      {{end}}
+      <button type="submit">Purchase</button>
+    </form>
+  </div>
+
+</body>
+</html>

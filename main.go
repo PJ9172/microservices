@@ -13,6 +13,7 @@ func main() {
 	config.LoadEnv()
 	config.ConnectDB()
 	config.DB.AutoMigrate(&models.User{})
+	config.DB.AutoMigrate(&models.Purchase{})
 
 	r := routers.SetRouters()
 	port := os.Getenv("PORT")

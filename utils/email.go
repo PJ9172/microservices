@@ -15,14 +15,6 @@ func SendWelcomeEmail(to string) {
 	e.To = []string{to}
 	e.Subject = "Welcome to MyApp!"
 	e.Text = []byte("Thanks for registering!")
-	fmt.Println(e.From)
-	fmt.Println(e.To)
-	fmt.Println(e.Subject)
-	fmt.Println(e.Text)
-	fmt.Println(os.Getenv("SMTP_USER"))
-	fmt.Println(os.Getenv("SMTP_HOST"))
-	fmt.Println(os.Getenv("SMTP_PORT"))
-	fmt.Println(os.Getenv("SMTP_PASS"))
 
 	err := e.Send(
 		os.Getenv("SMTP_HOST")+":"+os.Getenv("SMTP_PORT"),
@@ -40,7 +32,7 @@ func SendPaymentEmail(to string) {
 	e.From = "Microservices <" + os.Getenv("SMTP_USER") + ">"
 	e.To = []string{to}
 	e.Subject = "Payment Status : Done"
-	e.Text = []byte("Thanks for Purchasing Products!!!")
+	e.Text = []byte("Thanks for Payment!!!")
 
 	err := e.Send(
 		os.Getenv("SMTP_HOST")+":"+os.Getenv("SMTP_PORT"),
@@ -48,6 +40,7 @@ func SendPaymentEmail(to string) {
 	)
 	if err != nil {
 		log.Println("Failed to send email : ", err)
+		return
 	}
 	fmt.Println("Email send successfully!!")
 

@@ -8,9 +8,10 @@ type User struct {
 	Password string `json:password`
 }
 
-type Order struct {
+type Purchase struct {
 	gorm.Model
-	Order_id string `json:order_id`
-	Email    string `json:email`
-	Payment  string `json:payment`
+	Email    string   `json:email`
+	Status   string   `json:status`
+	Products []string `gorm:"-"`
+	RawData  string   `json:rawdata`
 }
