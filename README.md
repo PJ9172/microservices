@@ -6,7 +6,6 @@ This is a small web application built in **GoLang** with the following features:
 - Payment flow with database updates
 - Session management to persist user data
 
----
 
 ## ⚙️ Tech Stack
 
@@ -18,17 +17,7 @@ This is a small web application built in **GoLang** with the following features:
 - **HTML/CSS** (Frontend pages)
 - **godotenv** (Environment config)
 
----
 
-<!-- ## 📦 Features
-
-- 🔐 User authentication (Sign In / Sign Up)
-- 🧺 Product list with selection via checkboxes
-- 📝 Purchase saved to database with user email
-- 💰 Payment confirmation with DB status update
-- 🍪 Sessions to persist logged-in user state
-
---- -->
 
 ## 🛠️ Project Structure
 ```
@@ -63,11 +52,9 @@ This is a small web application built in **GoLang** with the following features:
 ```
 
 
-## Getting Started
+## 📌 How to Run
 
-### 📌 How to Run
-
-#### 1. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/PJ9172/microservices.git
@@ -99,17 +86,16 @@ SMTP_PASS=your-app-password
 ```bash
 go run main.go
 ```
-### App runs at:
-http://localhost:8000
+#### App runs at: http://localhost:8000
 
 
 ## 📸 Screenshots
-- #### 🧾 Sign In / Sign Up (Flip-style)
+- ### 🧾 Sign In / Sign Up (Flip-style)
     ![Sign-In Page](screenshots/signin.png) <br>
 
-- #### 🛍️ Product Selection Page
+- ### 🛍️ Product Selection Page
     ![Products Page](screenshots/products.png)
 
-- #### ✅ Payment Success Page (with animation)
+- ### ✅ Payment Success Page (with animation)
     ![Products Page](screenshots/payment.png)
 
